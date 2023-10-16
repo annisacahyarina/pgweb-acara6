@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.42.0/apexcharts.min.css"
         integrity="sha512-nnNXPeQKvNOEUd+TrFbofWwHT0ezcZiFU5E/Lv2+JlZCQwQ/ACM33FxPoQ6ZEFNnERrTho8lF0MCEH9DBZ/wWw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
 </head>
 
 <body>
@@ -46,14 +48,14 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="inflasi.html">Inflasi</a>
+                            <li><a class="dropdown-item" href="jumlahkendaraan.html">Jumlah Kendaraan</a>
                             </li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="harihujan.html">Realisasi Sertifikat Tanah</a></li>
-                        </ul>
-                    </li>
+                            <li><a class="dropdown-item" href="inflasi.html">Inflasi</a></li>
+
+
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -68,38 +70,36 @@
     <div class="container mt-4">
         <div class="card">
             <div class="card-header">
-                <h3>Jumlah Kecelakaan</h3>
+                <h3>Realisasi Pembuatan Sertifikat Tanah Tahun 2020</h3>
             </div>
             <div class="card-body">
-                <p>Banyaknya kecelakaan: 6465
-                    <br>
-                    Kerugian: 17314.42 </p>
                 <div id="chart"></div>
             </div>
         </div>
     </div>
 
-   <!-- Modal -->
-   <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel"> <i class="fa-solid fa-circle-info"></i> Info
-                </h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>Nama: Annisa</p>
-                <P>NIM: 22/497707/sv/21154</P>
-                <p>Kelas: A</p>
-                <P>Sumber Data: <a href="https://sumut.bps.go.id/" target="_blank">https://sumut.bps.go.id/</a></P>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel"> <i class="fa-solid fa-circle-info"></i> Info
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Nama: Annisa</p>
+                    <P>NIM: 22/497707/sv/21154</P>
+                    <p>Kelas: A</p>
+                    <P>Sumber Data: <a href="https://sumut.bps.go.id/" target="_blank">https://sumut.bps.go.id/</a></P>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
@@ -108,38 +108,78 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.42.0/apexcharts.min.js"
         integrity="sha512-HctQcT5hnI/elQck4950pvd50RuDnjCSGSoHI8CNyQIYVxsUoyJ+gSQIOrll4oM/Z7Kfi7WCLMIbJbiwYHFCpA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <script>
-         var options = {
-          series: [
-          1607.00, 2138.00,  7196.00
-
-],
-        labels: ['Meninggal Dunia', 'Luka Berat', 'Luka Ringan']  ,
-        chart: {
-          type: 'donut',
-          width: 500
+<script>
+   var options = {
+          series: [{
+          data: [6539, 6520, 1020, 76]
+        }],
+          chart: {
+          type: 'bar',
+          height: 380
         },
-        responsive: [{
-          breakpoint: 480,
-          options: {
-            chart: {
-              width: 200
-            },
-            legend: {
+        plotOptions: {
+          bar: {
+            barHeight: '100%',
+            distributed: true,
+            horizontal: true,
+            dataLabels: {
               position: 'bottom'
+            },
+          }
+        },
+        colors: ['#33b2df', '#546E7A', '#d4526e', '#13d8aa'
+        ],
+        dataLabels: {
+          enabled: true,
+          textAnchor: 'start',
+          style: {
+            colors: ['#fff']
+          },
+          formatter: function (val, opt) {
+            return opt.w.globals.labels[opt.dataPointIndex] + ":  " + val
+          },
+          offsetX: 0,
+          dropShadow: {
+            enabled: true
+          }
+        },
+        stroke: {
+          width: 1,
+          colors: ['#fff']
+        },
+        xaxis: {
+          categories: ['Hak Tanggungan', 'Hak Milik', 'Hak Guna Bangunan', 'Hak Pakai'
+          ],
+        },
+        yaxis: {
+          labels: {
+            show: false
+          }
+        },
+        title: {
+            text: 'Berdasarkan jenis hak tanah',
+            align: 'center',
+            floating: true
+        },
+        tooltip: {
+          theme: 'dark',
+          x: {
+            show: false
+          },
+          y: {
+            title: {
+              formatter: function () {
+                return ''
+              }
             }
           }
-        }]
+        }
         };
 
         var chart = new ApexCharts(document.querySelector("#chart"), options);
         chart.render();
-      
-
-    </script>
-         
-    
+        </script>
+        
 </body>
 
 </html>

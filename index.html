@@ -33,19 +33,27 @@
                             <i class="fa-solid fa-database"></i> Data
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="index.html">Info</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
                             <li><a class="dropdown-item" href="jumlahpenduduk.html">Jumlah Penduduk</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="pendudukjeniskelamin.html">Penduduk Jenis Kelamin</a></li>
+                            <li><a class="dropdown-item" href="pendudukjeniskelamin.html">Penduduk Jenis Kelamin</a>
+                            </li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="jumlahkendaraan.html">Jumlah Kendaraan</a></li>
+                            <li><a class="dropdown-item" href="jumlahkendaraan.html">Jumlah Kendaraan</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="inflasi.html">Inflasi</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="harihujan.html">Realisasi Sertifikat Tanah</a></li>
+                           
+                            
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -60,13 +68,52 @@
     <div class="container mt-4">
         <div class="card">
             <div class="card-header">
-                <h3>Jumlah Penduduk</h3>
+                <h3 style="text-align: center;">Kota Medan</h3>
+
             </div>
             <div class="card-body">
-                <div id="chart"></div>
+                <div id="chart">
+                    <img src="medan.jpg" alt="Masjid Raya Al-Mashun di Kota Medan, Sumatera Utara" width="700"
+                        height="400" style="vertical-align:middle;margin:0px 200px">
+                    <br>
+                    <br>
+                    <p style="text-align: justify;">Medan (Jawi: ميدن; Surat Batak: ᯔᯩᯑᯉ᯲; Hanzi: 棉蘭; Tamil: மேடான்) adalah ibu kota provinsi
+                        Sumatera
+                        Utara, Indonesia. Kota ini merupakan kota terbesar ketiga di Indonesia setelah DKI Jakarta, dan
+                        Surabaya serta kota terbesar di luar Pulau Jawa, sekaligus terbesar di Pulau
+                        Sumatra.
+                        Kota Medan merupakan pintu gerbang wilayah Indonesia bagian barat dengan keberadaan Pelabuhan
+                        Belawan dan Bandar Udara Internasional Kualanamu yang merupakan bandara terbesar kedua di
+                        Indonesia.
+                        Akses dari pusat kota menuju pelabuhan dan bandara dilengkapi oleh jalan tol dan kereta api.
+                        Medan
+                        adalah kota pertama di Indonesia yang mengintegrasikan bandara dengan kereta api. Berbatasan
+                        dengan
+                        Selat Malaka, Medan menjadi kota perdagangan, industri, dan bisnis yang sangat penting di
+                        Indonesia.
+                        Pada tahun 2022, Kota Medan memiliki penduduk sebanyak 2.494.512 jiwa, dengan kepadatan penduduk
+                        9.413 jiwa/km2. </p>
+                
+                    <!--
+                    <img src="peta medan2.jpg" alt="Peta Medan" width="700" height="700"
+                        style="vertical-align:middle;margin:0px 200px">
+
+                        <br>
+                        <br>
+        
+
+                    <p>Kota Medan memiliki luas 26.510 hektare (265,10 km²) atau 3,6% dari keseluruhan wilayah Sumatera
+                        Utara. Dengan demikian, dibandingkan dengan kota/kabupaten lainya, Medan memiliki luas wilayah
+                        yang relatif kecil dengan jumlah penduduk yang relatif besar. Secara geografis kota Medan
+                        terletak pada 3° 30' – 3° 43' Lintang Utara dan 98° 35'–98° 44' Bujur Timur. Untuk itu topografi
+                        kota Medan cenderung miring ke utara dan berada pada ketinggian 2,5–37,5 meter di atas permukaan
+                        laut.</p>
+                    -->
+                </div>
             </div>
         </div>
     </div>
+
 
     <!-- Modal -->
     <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
@@ -98,80 +145,7 @@
         integrity="sha512-HctQcT5hnI/elQck4950pvd50RuDnjCSGSoHI8CNyQIYVxsUoyJ+gSQIOrll4oM/Z7Kfi7WCLMIbJbiwYHFCpA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script>
-        var options = {
-            series: [{
-                name: 'Jumlah Penduduk',
-                data: ['100200', '156957', '132458', '174744', '120788', '86738', '51066',
-                    '61056', '36681', '103559', '131741', '168287', '73565', '92021', '118008',
-                    '105380', '148346', '192933', '137863', '190940', '111181'
 
-                ]
-            }],
-            chart: {
-                type: 'bar',
-                height: 350
-            },
-            plotOptions: {
-                bar: {
-                    horizontal: false,
-                    columnWidth: '55%',
-                    endingShape: 'rounded',
-                    dataLabels: {
-                        position: 'top',
-                    },
-                },
-            },
-            dataLabels: {
-                enabled: false
-            },
-            stroke: {
-                show: true,
-                width: 2,
-                colors: ['transparent']
-            },
-            xaxis: {
-                categories: ['Medan Tuntungan', 'Medan Johor', 'Medan Amplas', 'Medan Denai', 'Medan Area',
-                    'Medan Kota', 'Medan Maimun', 'Medan Polonia', 'Medan Baru', 'Medan Selayang', 'Medan Sunggal',
-                    'Medan Helvetia', 'Medan Petisah', 'Medan Barat', 'Medan Timur', 'Medan Perjuangan', 'Medan Tembung',
-                    'Medan Deli', 'Medan Labuhan', 'Medan Marelan', 'Medan Belawan'
-                ],
-                title: {
-                    text: 'Kecamatan'
-                }
-            },
-            yaxis: {
-                title: {
-                    text: 'Jiwa'
-                }
-            },
-            fill: {
-                opacity: 1
-            },
-            tooltip: {
-                y: {
-                    formatter: function (val) {
-                        return val + " Jiwa"
-                    }
-                }
-            },
-            dataLabels: {
-                enabled: true,
-                formatter: function (val) {
-                    return val;
-                },
-                offsetY: -20,
-                style: {
-                    fontSize: '12px',
-                    colors: ["#304758"]
-                }
-            },
-        };
-
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
-        chart.render();
-
-    </script>
 </body>
 
 </html>

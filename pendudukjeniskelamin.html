@@ -33,15 +33,25 @@
                             <i class="fa-solid fa-database"></i> Data
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="index.html">Jumlah Penduduk</a></li>
+                            <li><a class="dropdown-item" href="index.html">Info</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="pendudukjeniskelamin.html">Penduduk Jenis Kelamin</a></li>
+                            <li><a class="dropdown-item" href="jumlahpenduduk.html">Jumlah Penduduk</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="jumlahkendaraan.html">Jumlah Kendaraan</a></li>
+                            <li><a class="dropdown-item" href="jumlahkendaraan.html">Jumlah Kendaraan</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="inflasi.html">Inflasi</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                    </li>
+                    <li><a class="dropdown-item" href="harihujan.html">Realisasi Sertifikat Tanah</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -117,11 +127,13 @@
             chart: {
                 type: 'bar',
                 height: 350
+                
+                
             },
             plotOptions: {
                 bar: {
                     horizontal: false,
-                    columnWidth: '55%',
+                    columnWidth: '60%',
                     endingShape: 'rounded',
                     dataLabels: {
                         position: 'top',
@@ -133,7 +145,7 @@
             },
             stroke: {
                 show: true,
-                width: 2,
+                width: 6,
                 colors: ['transparent']
             },
             xaxis: {
